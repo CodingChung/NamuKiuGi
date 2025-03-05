@@ -1,5 +1,23 @@
 window.onload = () => {
-  console.log(1);
+  const container = document.querySelector('.main');
+  const slideLinks = document.querySelectorAll('a[href]');
+
+  function reset() {
+    container.querySelectorAll('.page').forEach(element => {
+      if (element?.classList.contains('show'))
+        element?.classList.remove('show');
+    });
+  };
+  
+  slideLinks.forEach(e => {
+    e.addEventListener('click', function(event) {
+      event.preventDefault();
+      reset();
+      const targetPage = container.querySelector(e.getAttribute('href'));
+      targetPage.classList.add('show');
+    });
+  });
+
   requestWakeLock();
 };
 
@@ -21,5 +39,3 @@ const releaseWakeLock = async () => {
     wakeLock = null;
   }
 };
-
-// releaseWakeLock();

@@ -1,32 +1,33 @@
 .main {
 	width: min(100%, 768px);
 	background-color: #282828;
-	padding: 1rem;
 	border-radius: 1rem;
 	position: relative;
-
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	align-items: flex-start;
-	gap: 1rem;
+	overflow: hidden;
 }
 
-.main .profile {
-	width: 100%;
+.profile {
+	width: min(100%, 768px);
+	
+	padding: .5rem;
+	background-color: #282828;
+	border-radius: 1rem;
+	gap: .5rem;
 
 	& img {
 		width: 64px;
-		border: 1px solid gray;
+		border-radius: .5rem;
 	}
 }
 
-.main .profile .menu {
+.profile .menu {
 	float: right;
 	font-size: 2rem;
+	line-height: 1;
+	border-radius: .5rem;
 }
 
-.main .info {
+.info {
 	display: inline-block;
 }
 
@@ -36,39 +37,36 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	position: relative;
 
 	& img {
 		width: 70%;
 	}
-
-	&::after {
-		content: "!";
-		background-color: yellow;
-		color: white;
-		border-radius: 50%;
-		width: 2rem;
-		height: 2rem;
-		font-size: 2rem;
-		-webkit-text-stroke: 4px black;
-		paint-order: stroke fill;
-		position: absolute;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		top: 0;
-	}
 }
 
-.main .buttons {
+.buttons {
+	width: min(100%, 768px);
 	display: flex;
-	justify-content: space-evenly;
-	width: 100%;
+	justify-content: space-between;
+
+	padding: .5rem;
+	background-color: #282828;
+	border-radius: 1rem;
+	gap: .5rem;
 
 	& a {
-		padding: 1rem 2rem;
-		border: 1px solid gray;
-		width: 20%;
+		padding: .5rem 1rem;
+		background-color: #101010;
 		text-align: center;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		width: 100%;
+
+		&:first-child {
+			border-radius: .5rem 0 0 .5rem;
+		}
+		&:last-child {
+			border-radius: 0 .5rem .5rem 0;
+		}
 	}
 }
